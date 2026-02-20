@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marisela ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Georgia', serif;
+        background: linear-gradient(to bottom right, #ff758c, #ff7eb3);
+        text-align: center;
+        color: white;
+        overflow-x: hidden;
+    }
+
+    header {
+        padding: 60px 20px;
+    }
+
+    h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+        font-size: 1.2em;
+        max-width: 600px;
+        margin: auto;
+        line-height: 1.6;
+    }
+
+    .contador {
+        margin-top: 30px;
+        font-size: 1.5em;
+        font-weight: bold;
+        background: rgba(255,255,255,0.2);
+        padding: 20px;
+        border-radius: 20px;
+        display: inline-block;
+    }
+
+    .btn {
+        margin-top: 30px;
+        padding: 15px 30px;
+        background: white;
+        color: #ff4e78;
+        border: none;
+        border-radius: 30px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #ff4e78;
+        color: white;
+    }
+
+    .heart {
+        position: fixed;
+        color: red;
+        animation: floatUp 4s linear infinite;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    @keyframes floatUp {
+        from {
+            transform: translateY(100vh);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(-10vh);
+            opacity: 0;
+        }
+    }
+
+    footer {
+        margin-top: 60px;
+        padding: 20px;
+        font-size: 0.9em;
+        opacity: 0.9;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Marisela ❤️</h1>
+    <p>
+        Desde el 21 de junio de 2025 mi vida cambió por completo.  
+        Gracias por ser mi alegría, mi paz y mi persona favorita se que 
+        ahorita no puedo darte una carta en fisico pero es por mi letra amor
+        pero veras que pronto te dare una, espero que te guste mucho 
+        que yo se que si porque es un lindo detalle creo yo, amor me encanto hacerlo
+        tengo una foto de cuando estoy haciendolo amor mio espero que nunca te aburras de mi.  
+        Te amo más.
+    </p>
+
+    <div class="contador">
+        Llevamos juntos:<br>
+        <span id="tiempo"></span>
+    </div>
+
+    <br>
+    <button class="btn" onclick="mensaje()">Haz clic aquí 💌</button>
+</header>
+
+<footer>
+    Con amor, tu campeon 💖
+</footer>
+
+<script>
+const fechaInicio = new Date("2025-06-21T00:00:00");
+
+function actualizarContador() {
+    const ahora = new Date();
+    const diferencia = ahora - fechaInicio;
+
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
+    const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
+    const segundos = Math.floor((diferencia / 1000) % 60);
+
+    document.getElementById("tiempo").innerHTML =
+        dias + " días, " +
+        horas + " horas, " +
+        minutos + " minutos y " +
+        segundos + " segundos 💕";
+}
+
+setInterval(actualizarContador, 1000);
+actualizarContador();
+
+function mensaje() {
+    alert("Marisela, eres mi reina hermosa ❤️✨");
+}
+
+function crearCorazon() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 4000);
+}
+
+setInterval(crearCorazon, 500);
+</script>
+
+</body>
+</html>
